@@ -1,0 +1,12 @@
+<!-- <p>student-details works!</p> -->
+<label>Name: {{name}}</label>
+<br/>
+Email:<label><input type=text [(ngModel)]="email" [placeholder]="email">{{email}}</label>
+<br/>
+<label>Phone Number : </label><label>{{pid}}</label><br/>
+<label>Father's name:</label><label [innerHtml]="Fathername"></label><br>
+<label>Mother's name:</label><label [innerHtml]="Mothername"></label><br>
+<input type="button" value="submit" [disabled]="flag"><br/>
+<input type="button" value="cancel" [disabled]="!flag"><br/>
+
+
