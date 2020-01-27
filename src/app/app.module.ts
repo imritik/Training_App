@@ -6,19 +6,34 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { AddStudentComponent } from './add-student/add-student.component';
 import { AddStudentreactiveComponent } from './add-studentreactive/add-studentreactive.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+
+const routes: Routes = [
+  { path: '', component: StudentDetailsComponent },
+  { path: 'Add', component: AddStudentComponent },
+  { path: 'Addreactive', component: AddStudentreactiveComponent },
+  { path: '**', component: PageNotFoundComponent },
+];
 @NgModule({
   declarations: [
     AppComponent,
     StudentDetailsComponent,
     AddStudentComponent,
-    AddStudentreactiveComponent
+    AddStudentreactiveComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),CommonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }
+export class AppRoutingModule { }
