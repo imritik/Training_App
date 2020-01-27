@@ -18,7 +18,7 @@ export class AddStudentComponent implements OnInit {
   submitted = false;
  
   
-onSubmit(form,formData) {
+onSubmit(form:any,formData:any):void {
     console.log('submitted formdata',formData);  
     
     alert('Form submitted');
