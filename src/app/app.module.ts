@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MyserviceService } from './myservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -29,9 +31,11 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),CommonModule
+    RouterModule.forRoot(routes),CommonModule,
+    // AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MyserviceService],
   bootstrap: [AppComponent],
   exports: [RouterModule]
 })

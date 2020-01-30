@@ -11,4 +11,10 @@
     <a routerLink="/Add" class="btn btn-sm">Add Student</a>
     <a routerLink="/Addreactive" class="btn btn-sm">Add Student Reactive</a>
 </nav>
+<h3>Users Data</h3>
+<ul>
+   <li *ngFor="let item of persondata; let i = index">
+      {{item}}
+   </li>
+</ul>
 <router-outlet></router-outlet>

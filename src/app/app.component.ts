@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MyserviceService } from './myservice.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'StudentRegistration';
+  public persondata = [];
+  constructor(private myservice: MyserviceService) {}
+  ngOnInit() {
+     this.myservice.getData().subscribe((data) => {
+        this.persondata = Array.from(Object.keys(data), k=>data[k]);
+        console.log(this.persondata);
+     });
+  }
 }
