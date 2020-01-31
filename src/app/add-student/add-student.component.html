@@ -1,26 +1,27 @@
-
 <div class="container">
 
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
             <form (ngSubmit)="onSubmit(formdemo, userData)" #formdemo="ngForm">
- 
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" class="form-control" [(ngModel)]="userData.username" name="username" required>              
+                    <input type="text" id="username" class="form-control" [(ngModel)]="userData.username" name="username" required>
                     <!-- <span class="help-block" *ngIf="username.touched">Please enter a valid name!</span>                                -->
+                    <!-- <span ng-show="!username.length && username.touched">Please enter something!</span> -->
                 </div>
                 <div class="form-group">
                     <label for="username">Mobile</label>
-                    <input type="tel" id="usermob" class="form-control" [(ngModel)]="userData.mobile" pattern="^((\\+91-?)|0)?[0-9]{10}$" name="mobile" required mobile #mobile="ngModel"> 
-                    <span class="help-block" *ngIf="!mobile.valid && mobile.touched">Please enter a valid number!</span>               
+                    <input type="tel" id="usermob" class="form-control" [(ngModel)]="userData.mobile" pattern="^((\\+91-?)|0)?[0-9]{10}$" name="mobile"
+                        required mobile #mobile="ngModel">
+                    <span class="help-block" *ngIf="!mobile.valid && mobile.touched">Please enter a valid number!</span>
                 </div>
                 <div class="form-group">
                     <label for="email">Mail</label>
-                    <input type="email" id="email" class="form-control" [(ngModel)]="userData.email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(teksystems)\.com$" name="email" required email #email="ngModel">
+                    <input type="email" id="email" class="form-control" [(ngModel)]="userData.email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(teksystems)\.com$"
+                        name="email" required email #email="ngModel">
                     <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!(abc@teksystems.com)</span>
                 </div>
- 
+
                 <div class="form-group">
                     <label for="country">Select country</label>
                     <select id="country" class="form-control" [(ngModel)]="userData.country" name="country">
@@ -28,20 +29,20 @@
                         <option value="usa">USA</option>
                     </select>
                 </div>
- 
+
                 <div class="radio" *ngFor="let gender of genders">
+                    <label for="gender">Select Gender</label>
                     <label>
                         <input type="radio" name="gender" [(ngModel)]="userData.gender" [value]="gender" required> {{ gender }}
                     </label>
                 </div>
                 <div>
-                  
-                    <input type="checkbox" id="check"   [(ngModel)]="userData.check" name="check" required check #check="ngModel">Agree
+                    <input type="checkbox" id="check" [(ngModel)]="userData.check" name="check" required check #check="ngModel">Agree
                     <span class="help-block" *ngIf="check.touched">Please check the conditions!</span>
                 </div>
                 <button class="btn btn-primary" type="submit" [disabled]="!formdemo.valid">Submit</button>
             </form>
         </div>
     </div>
- 
+
 </div>

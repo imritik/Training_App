@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add-student',
   templateUrl: './add-student.component.html',
@@ -9,25 +9,25 @@ export class AddStudentComponent implements OnInit {
   genders = ['male', 'female'];
   userData = {
     username: '',
-    mobile:'',
+    mobile: '',
     email: '',
     country: '',
     gender: '',
-    check:''
+    check: ''
   };
   submitted = false;
- 
-  
-onSubmit(form:any,formData:any):void {
-    console.log('submitted formdata',formData);  
-    
-    alert('Form submitted');
-    
-    form.reset();
-  }
-  constructor() { }
 
+  constructor() { }
   ngOnInit() {
   }
+  onSubmit(form: any, formData: any): void {
+    console.log('submitted formdata', formData);
+
+    alert('Form submitted');
+
+    form.reset();
+  }
+
+
 
 }
