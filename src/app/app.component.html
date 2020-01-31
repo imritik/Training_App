@@ -1,7 +1,4 @@
-<!-- <app-student-details></app-student-details> -->
-<!-- <app-add-student></app-add-student> -->
-<!-- <app-add-studentreactive></app-add-studentreactive> -->
-<!--header part -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -10,19 +7,6 @@
     <a routerLink="" class="btn btn-sm">View Student</a>
     <a routerLink="/Add" class="btn btn-sm">Add Student</a>
     <a routerLink="/Addreactive" class="btn btn-sm">Add Student Reactive</a>
+    <a routerLink='/FetchStudents' class="btn btn-sm">Fetch Student</a>
 </nav>
-<h3>Users Data</h3>
-
-<table border="1" style="width: 33%">
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Email</th>
-    </tr>
-    <tr *ngFor="let item of persondata">
-      <td>{{ item.id }}</td>
-      <td>{{ item.name }}</td>
-      <td>{{ item.email }}</td>
-    </tr>
-  </table>
 <router-outlet></router-outlet>

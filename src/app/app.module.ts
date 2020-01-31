@@ -11,12 +11,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FetchStudentComponent } from './fetch-student/fetch-student.component';
 
 
 const routes: Routes = [
   { path: '', component: StudentDetailsComponent },
   { path: 'Add', component: AddStudentComponent },
   { path: 'Addreactive', component: AddStudentreactiveComponent },
+  {path:'FetchStudents',component:FetchStudentComponent},  
   { path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({
@@ -25,14 +27,14 @@ const routes: Routes = [
     StudentDetailsComponent,
     AddStudentComponent,
     AddStudentreactiveComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FetchStudentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),CommonModule,
-    // AppRoutingModule,
     HttpClientModule
   ],
   providers: [MyserviceService],
